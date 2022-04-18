@@ -1,0 +1,13 @@
+<ng-template #deletemodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Confirm Deletion</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" (click)="delete()" (click)="modal.close('Save click')" class="btn  btn-danger">Confirm Deletion</button>
+        <button type="submit" (click)="modal.close('Save click')" class="btn btn-outline-dark">Close</button>
+
+    </div>
+</ng-template>

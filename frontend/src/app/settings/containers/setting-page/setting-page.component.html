@@ -1,0 +1,24 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+
+    <ngb-panel>
+
+        <ng-template ngbPanelHeader class="bgwhite">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <button class="mx-3 button-tog" (click)="toggle()" [ngClass]="isOpen() ? 'is-open': ''" ngbPanelToggle><div id="dialog1" class="triangle_down"></div>
+                    </button>
+                    <h4>My Contacts</h4>
+                </div>
+
+                <button class="btn btn-rounded btn-block mx-3 button-clr " (click)="showModalCity()" style="width: 100px;height: 35px;">Add</button>
+
+            </div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <app-city-list></app-city-list>
+            <app-view-city-details></app-view-city-details>
+            <app-add-edit-city></app-add-edit-city>
+            <app-delete-confirmation></app-delete-confirmation>
+        </ng-template>
+    </ngb-panel>
+    <ngb-accordion>

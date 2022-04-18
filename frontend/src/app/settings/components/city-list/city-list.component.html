@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<div class="row">
+    <div class="col-12">
+        <div class="card card-body">
+            <h4 class="card-title">Contact Referential</h4>
+            <h5 class="card-subtitle">Here is the Contact list you can add, edit or delete the cities</h5>
+            <div class="d-flex mb-3 mt-3">
+            </div>
+            <div class="table-responsive ">
+                <table class="table table-striped mb-0 no-wrap v-middle">
+                    <thead>
+                        <tr>
+                            <th class="text-center" scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Adresse</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let contact of filterArray | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+
+                            <td class="text-center">
+                                {{contact.contactid}}
+                            </td>
+
+
+                            <td>{{contact.name}}</td>
+
+                            <td>{{ contact.phone }}</td>
+
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.adress }}</td>
+
+                            <td>
+                                <a href="javascript: void(0);" (click)="showUpdateModal(contact)" class="link mr-2" placement="top" ngbTooltip="Edit">
+                                    <!-- <i class="far fa-edit"></i> -->
+                                    <i class="fa-solid fa-pen-to-square"></i> </a>
+                                <a href="javascript: void(0);" class="link" (click)="deleteContact(contact.contactid)" placement="top" ngbTooltip="Delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+
+                                <a href="javascript: void(0);" class="link mx-2" (click)="showViewModal(contact)" placement="top" ngbTooltip="View">
+                                    <i class="fa-solid fa-eye"></i> </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="filterArray.length"></ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{
+    "name": "youcode/mvc",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "armanovxx",
+        "email": "iebeat2018@outlook.com"
+    }],
+    "require": {
+        "firebase/php-jwt": "^6.1"
+    }
+}
